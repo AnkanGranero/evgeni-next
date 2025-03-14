@@ -44,12 +44,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="p-4 border-b border-gray-200">
-          <nav className="container mx-auto flex justify-center items-center">
+          <nav className="w-full mx-auto flex justify-center items-center">
             <h1 className="text-xl font-bold">Evgeni Leonov</h1>
           </nav>
         </header>
 
-        <main className="container mx-auto p-4">{children}</main>
+        <main className="w-full">{children}</main>
 
         <footer className="p-4 text-center border-t border-gray-200 mt-8">
           © {new Date().getFullYear()} Evgeni Leonov. Alla rättigheter förbehållna.
