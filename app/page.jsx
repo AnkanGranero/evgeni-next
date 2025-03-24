@@ -3,7 +3,6 @@ import { getPresentationText } from "@/lib/contentfulUtils"
 export default async function Home() {
 
   const presentationText = await getPresentationText();
-  console.log("entries ..",presentationText);
   
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">

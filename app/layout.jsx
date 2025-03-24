@@ -1,7 +1,6 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import CHeader from "./components/CHeader"
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -12,7 +11,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Evgeni Leonov - skådespelare",
   description: "Officiell hemsida för skådespelaren Evgeni Leonov.",
   openGraph: {
@@ -30,11 +29,7 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }) {
   return (
     <html lang="sv">
       <head>
@@ -43,11 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="p-4 border-b border-gray-200">
-          <nav className="w-full mx-auto flex justify-center items-center">
-            <h1 className="text-xl font-bold">Evgeni Leonov</h1>
-          </nav>
-        </header>
+        <CHeader />
 
         <main className="w-full">{children}</main>
 
