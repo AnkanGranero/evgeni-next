@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CHeader from "./components/CHeader"
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -40,7 +41,11 @@ export default function RootLayout({ children }) {
       >
         <CHeader />
 
-        <main className="w-full">{children}</main>
+        <main className="w-full">
+
+          {children}
+
+        </main>
 
         <footer className="p-4 text-center border-t border-gray-200 mt-8 bg-[rgb(141,235,141)] flex h-14 text-black justify-center">
 
