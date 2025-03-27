@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.0.1",
+    "@react-spring/parallax": "^9.7.5",
+    "@react-spring/web": "^9.7.5",
     "contentful": "^11.5.7",
     "next": "15.2.2",
     "react": "^19.0.0",

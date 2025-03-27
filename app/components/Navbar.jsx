@@ -1,7 +1,7 @@
 import { getHeaderMenuItems } from "../../lib/contentfulUtils";
 import Link from "next/link"
 
-export default async function CHeader() {
+export default async function Navbar() {
 
   const headerMenuItems = await getHeaderMenuItems();
 
@@ -9,12 +9,13 @@ export default async function CHeader() {
     { name: "Hej", link: "/" },
     { name: "Aktuellt", link: "/aktuellt" },
     { name: "Galleri", link: "/galleri" },
-    { name: "CV", link: "/cv" }
+    { name: "CV", link: "/cv" },
+    { name: "Test", link: "/test" },
   ]
 
   return (
-    <header className="">
-      <nav className="w-full mx-auto flex justify-evenly items-center h-[6rem] flex text-black bg-transparent">
+    <header className="fixed top-0 left-0 w-full z-50">
+      <nav className="w-full mx-auto flex justify-evenly items-center h-[6rem] flex text-black bg-transparent text-white">
         <ul className="flex h-2/3  p-3 w-1/3">
           {headerMenuItems.map((item, index) => (
             <li key={index} className="h-full ml-10">
