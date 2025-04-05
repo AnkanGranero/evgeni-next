@@ -16,7 +16,7 @@ export default async function Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 min-h-[8rem]">
       <nav className="w-full mx-auto flex justify-evenly items-center h-[6rem] flex text-black bg-transparent text-white">
-        <ul className="flex h-2/3  p-3 w-1/3 self-end">
+        <ul className="flex h-2/3 w-1/3 self-end">
           {headerMenuItems.map((item, index) => (
             <li key={index} className="h-full ml-10">
               <a href={item.link}>
