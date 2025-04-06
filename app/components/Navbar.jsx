@@ -1,9 +1,12 @@
-import { getHeaderMenuItems } from "../../lib/contentfulUtils";
+"use client";
 import Link from "next/link"
+import { ScrollContext } from "./ScrollProvider";
+import { useContext } from "react";
+import { animated } from "@react-spring/web";
 
-export default async function Navbar() {
+export default function Navbar({headerMenuItems}) {
 
-  const headerMenuItems = await getHeaderMenuItems();
+  const { scrollYProgress } = useContext(ScrollContext);
 
   const views = [
     { name: "Hej", link: "/" },
@@ -15,7 +18,7 @@ export default async function Navbar() {
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 min-h-[8rem]">
-      <nav className="w-full mx-auto flex justify-evenly items-center h-[6rem] flex text-black bg-transparent text-white">
+      <nav className="w-full mx-auto flex justify-evenly items-center h-[6rem] z-10 flex text-black bg-transparent text-white relative">
         <ul className="flex h-2/3 w-1/3 self-end">
           {headerMenuItems.map((item, index) => (
             <li key={index} className="h-full ml-10">
@@ -25,7 +28,7 @@ export default async function Navbar() {
             </li>
           ))}
         </ul>
-        <h1 className="font-bold text-8xl leading-[1.5] w-1/3  text-center self-start">Evgeni Leonov</h1>
+        <animated.h1 className="font-bold text-8xl leading-[1.5] w-1/3 text-center self-start" style={{ opacity: scrollYProgress.to(v => 1 - v)}}>Evgeni Leonov</animated.h1>
         <ul className="w-1/3 flex justify-evenly self-end">
           {views.map(view => (
             <Link key={view.name} href={view.link} className="text-2xl">

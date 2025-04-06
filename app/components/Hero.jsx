@@ -4,17 +4,13 @@
 import { animated, useScroll, useSpring } from '@react-spring/web';
 import { useRef } from "react";
 import Footer from "./Footer"
+import { useContext } from "react";
+import { ScrollContext } from "./ScrollProvider";
 
 export default function Hero({ text }) {
   const containerRef = useRef();
-
-
   
-  const { scrollYProgress } = useScroll({ container: containerRef,
-    onChange: ( {value }) => {
-      return value;
-    }
-  });
+  const { scrollYProgress } = useContext(ScrollContext);
 
   const styles = useSpring({
 
@@ -24,14 +20,13 @@ export default function Hero({ text }) {
     },
   })
   return (
-    <animated.div ref={containerRef}
-      className="h-screen overflow-y-auto">
+    <animated.div className="h-full" ref={containerRef}>
 
           <animated.div style={{opacity: scrollYProgress.to(v => 1 - v),backgroundSize: scrollYProgress.to(v=> `${120  - (v*10)}%`), ...styles}} className='bg-center h-full w-full bg-no-repeat bg-[url(/Evgeni_Leonov_foto.jpg)]' />
 
           <section className="flex justify-center">
             <div className="text-white text-center max-w-5xl" >
-              <animated.div style={{opacity: scrollYProgress.to(v => 0 + v), transform: scrollYProgress.to(v => `translateY(-${v * 300}px)`)}} className='text-3xl p-8'>{text}</animated.div>
+              <animated.div style={{opacity: scrollYProgress.to(v => 1 + v), transform: scrollYProgress.to(v => `translateY(-${v * 250}px)`)}} className='text-3xl p-8'>{text}</animated.div>
             </div>
           </section>
   

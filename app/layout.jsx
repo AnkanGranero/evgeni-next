@@ -1,6 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar"
+import { ScrollProvider } from "./components/ScrollProvider"
+import { getHeaderMenuItems } from "../lib/contentfulUtils";
+
 
 
 const geistSans = Geist({
@@ -31,7 +34,8 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const headerMenuItems = await getHeaderMenuItems();
   return (
     <html lang="sv">
       <head>
@@ -42,13 +46,17 @@ export default function RootLayout({ children }) {
       >
 
 
-        <Navbar />
 
-        <main className="w-full">
+        <ScrollProvider>
+          <Navbar headerMenuItems={headerMenuItems} />
 
-          {children}
+          <main className="w-full h-full">
 
-        </main>
+
+            {children}
+
+          </main>
+        </ScrollProvider>
       </body>
     </html>
   );
