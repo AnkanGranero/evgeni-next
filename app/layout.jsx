@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar"
 import { ScrollProvider } from "./components/ScrollProvider"
 import { getHeaderMenuItems } from "../lib/contentfulUtils";
+import Footer from "./components/Footer"
 
 
 
@@ -50,12 +51,14 @@ export default async function RootLayout({ children }) {
         <ScrollProvider>
           <Navbar headerMenuItems={headerMenuItems} />
 
-          <main className="w-full h-full">
+          <main className="w-full">
 
 
             {children}
 
           </main>
+          <Footer />
+
         </ScrollProvider>
       </body>
     </html>

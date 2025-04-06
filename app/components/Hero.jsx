@@ -1,9 +1,8 @@
 
 
 "use client";
-import { animated, useScroll, useSpring } from '@react-spring/web';
+import { animated, useSpring } from '@react-spring/web';
 import { useRef } from "react";
-import Footer from "./Footer"
 import { useContext } from "react";
 import { ScrollContext } from "./ScrollProvider";
 
@@ -20,9 +19,9 @@ export default function Hero({ text }) {
     },
   })
   return (
-    <animated.div className="h-full" ref={containerRef}>
+    <animated.div ref={containerRef}>
 
-          <animated.div style={{opacity: scrollYProgress.to(v => 1 - v),backgroundSize: scrollYProgress.to(v=> `${120  - (v*10)}%`), ...styles}} className='bg-center h-full w-full bg-no-repeat bg-[url(/Evgeni_Leonov_foto.jpg)]' />
+          <animated.div style={{opacity: scrollYProgress.to(v => 1 - v),backgroundSize: scrollYProgress.to(v=> `${120  - (v*10)}%`), ...styles}} className='bg-center min-h-screen w-full bg-no-repeat bg-[url(/Evgeni_Leonov_foto.jpg)]' />
 
           <section className="flex justify-center">
             <div className="text-white text-center max-w-5xl" >
@@ -31,7 +30,6 @@ export default function Hero({ text }) {
           </section>
   
 
-        <Footer />
 
 
     </animated.div>
