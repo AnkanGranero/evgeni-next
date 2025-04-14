@@ -25,7 +25,7 @@ export default function Hero({ text }) {
 
           <section className="flex justify-center">
             <div className="text-white text-center max-w-5xl" >
-              <animated.div style={{opacity: scrollYProgress.to(v => 1 + v), transform: scrollYProgress.to(v => `translateY(-${v * 250}px)`)}} className='text-3xl p-8'>{text}</animated.div>
+              <animated.div style={{opacity: scrollYProgress.to(v => 1 + v), transform: scrollYProgress.to(v => `translateY(-${v * 250}px)`)}} className='md:text-3xl p-8'>{text}</animated.div>
             </div>
           </section>
   
