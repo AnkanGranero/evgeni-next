@@ -51,7 +51,7 @@ export default async function RootLayout({ children }) {
         <ScrollProvider>
           <Navbar headerMenuItems={headerMenuItems} />
 
-          <main className="w-full">
+          <main className="w-full min-h-screen">
 
 
             {children}
