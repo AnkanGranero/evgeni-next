@@ -1,9 +1,10 @@
 import type { NextConfig } from "next";
-
+import path from "path";
 const nextConfig: NextConfig = {
-  experimental: {
-    turbopack: false,
-  } as any,
+
+  sassOptions: {
+    additionalData: `@use "${path.resolve(__dirname, "./styles/colors.scss")}" as *;`,
+  },
 };
 
 export default nextConfig;

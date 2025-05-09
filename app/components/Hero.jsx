@@ -26,8 +26,8 @@ export default function Hero({ text }) {
           <animated.div style={{opacity: scrollYProgress.to(v => 1 - v),backgroundSize: scrollYProgress.to(v=> `${backgroundStartSize  - (v*10)}%`), ...styles}} className='bg-center min-h-[100vh] md:min-h-screen w-full bg-no-repeat bg-[url(/Evgeni_Leonov_foto.jpg)]' />
 
           <section className="flex justify-center">
-            <div className="text-white text-center max-w-5xl" >
-              <animated.div style={{opacity: scrollYProgress.to(v => 1 + v), transform: scrollYProgress.to(v => `translateY(-${v * 250}px)`)}} className='md:text-3xl p-8'>{text}</animated.div>
+            <div className="text-white text-center max-w-5xl" style={{background: "black"}} >
+              <animated.div style={{opacity: scrollYProgress.to(v => 1 + v), transform: scrollYProgress.to(v => `translateY(-${v * 250}px)`)}} className='md:text-2xl p-8'>{text}</animated.div>
             </div>
           </section>
   

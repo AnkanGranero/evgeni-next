@@ -1,9 +1,11 @@
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import Navbar from "./components/Navbar"
 import { ScrollProvider } from "./components/ScrollProvider"
 import { getHeaderMenuItems } from "../lib/contentfulUtils";
 import Footer from "./components/Footer"
+import { barlowCondensed } from "../styles/fonts"
+import "../styles/globals.css";
+
 
 
 
@@ -38,7 +40,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const headerMenuItems = await getHeaderMenuItems();
   return (
-    <html lang="sv">
+    <html lang="sv" className={barlowCondensed.className}>
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
