@@ -5,6 +5,7 @@ import { getHeaderMenuItems } from "../lib/contentfulUtils";
 import Footer from "./components/Footer"
 import { barlowCondensed } from "../styles/fonts"
 import "../styles/globals.css";
+import {views} from "../lib/views"
 
 
 
@@ -38,7 +39,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  const headerMenuItems = await getHeaderMenuItems();
+
   return (
     <html lang="sv" className={barlowCondensed.className}>
       <head>
@@ -51,7 +52,8 @@ export default async function RootLayout({ children }) {
 
 
         <ScrollProvider>
-          <Navbar headerMenuItems={headerMenuItems} />
+          <Navbar views={views} />
+
 
           <main className="w-full min-h-screen">
 
@@ -59,7 +61,7 @@ export default async function RootLayout({ children }) {
             {children}
 
           </main>
-          <Footer />
+          <Footer views={views}/>
 
         </ScrollProvider>
       </body>
