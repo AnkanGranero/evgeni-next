@@ -5,7 +5,7 @@ import { getHeaderMenuItems } from "../lib/contentfulUtils";
 import Footer from "./components/Footer"
 import { barlowCondensed } from "../styles/fonts"
 import "../styles/globals.css";
-import {views} from "../lib/views"
+import { views } from "../lib/views"
 
 
 
@@ -44,6 +44,10 @@ export default async function RootLayout({ children }) {
     <html lang="sv" className={barlowCondensed.className}>
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
@@ -61,7 +65,7 @@ export default async function RootLayout({ children }) {
             {children}
 
           </main>
-          <Footer views={views}/>
+          <Footer views={views} />
 
         </ScrollProvider>
       </body>

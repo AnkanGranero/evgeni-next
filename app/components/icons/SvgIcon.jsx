@@ -1,38 +1,24 @@
-import React from "react";
-
-const SvgIcon = ({
-  maskId,
-  maskPath,
-  fill = "#000",
-  size = 100
-}) => {
-  const viewBox = "0 0 600 600";
-  const hasMask = maskId && maskPath;
-
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox={viewBox}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      {hasMask && (
+const SvgIcon = ({ maskPaths = [], fill = "#000", maskId = "icon-mask" }) => (
+    <svg viewBox="0 0 32 32" width="100%" height="100%">
         <defs>
-          <mask id={maskId}>
-            <rect width="600" height="600" fill="white" />
-            <path d={maskPath} fill="black" fillRule="evenodd" />
-          </mask>
+            <mask id={maskId}>
+                <rect width="32" height="32" fill="black" />
+                <circle cx="16" cy="16" r="15" fill="white" />
+                <g transform="translate(8, 8)">
+                    {maskPaths.map((d, i) => (
+                        <path key={i} d={d} fill="black" />
+                    ))}
+                </g>
+            </mask>
         </defs>
-      )}
-      <circle
-        cx="300"
-        cy="300"
-        r="297.5"
-        fill={fill}
-        mask={hasMask ? `url(#${maskId})` : undefined}
-      />
+        <circle
+            cx="16"
+            cy="16"
+            r="15"
+            fill={fill}
+            mask={`url(#${maskId})`}
+        />
     </svg>
-  );
-};
+);
 
 export default SvgIcon;

@@ -4,49 +4,38 @@ import { ScrollContext } from "./ScrollProvider";
 import { useContext, useState } from "react";
 import { animated } from "@react-spring/web";
 import { Overlay } from "./Overlay"
+import SvgIcon from "./icons/SvgIcon"
+import socialMediaIcons from "./icons/socialMediaIcons"
 
 export default function Navbar({ views }) {
 
-  const iconLinks = [
-    { src: "/svgIcons/instagram.svg", href: "https://instagram.com" },
-    { src: "/svgIcons/facebook.svg", href: "https://facebook.com" },
-    { src: "/svgIcons/mail.svg", href: "mailto:example@example.com" },
-    { src: "/svgIcons/spotify.svg", href: "https://open.spotify.com" },
-    { src: "/svgIcons/youtube.svg", href: "https://youtube.com" }
-  ];
-  const { scrollYProgress } = useContext(ScrollContext);
-  const [isOpen, setIsOpen] = useState(false);
-  const openOrCloseOverlay = (bool) => {
-    setIsOpen(bool);
-  }
+
 
   return (
-    <header className="md:fixed top-0 left-0 w-full z-50 min-h-[8rem] px-[2rem] md:px-0 bg-pinkish">
+    <header className="fixed top-0 left-0 w-full z-50 h-[9rem] md:h-[8rem] p-[1rem] md:p-0 bg-orange">
 
-      {isOpen && <Overlay views={views} close={() => openOrCloseOverlay(false)} />}
-      <nav className="w-full mx-auto flex flex-col-reverse md:flex-row justify-evenly items-center h-[6rem] z-10 text-black bg-transparent text-white relative">
-        <ul className="flex h-2/3 w-full md:w-1/3 justify-between md:justify-evenly md:self-end md:items-end list-none">
-          {iconLinks.map(({ src, href }, index) => (
-            <li key={index} className="h-[60%] md:h-[80%]">
+      <nav className="w-full mx-auto flex flex-col md:flex-row justify-evenly items-center h-full z-10 text-black bg-transparent text-white relative">
+        <ul className="flex md:h-3/5 h-[3rem] w-full md:w-1/3 justify-between md:justify-evenly md:items-end list-none">
+          {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
+            <li key={index} className="h-full md:h-[100%]">
               <a href={href} target="_blank" rel="noopener noreferrer">
-                <img src={src} alt="" width={48} height={48} />
+                <SvgIcon
+                  className="block max-w-full max-h-full"
+                  fill="var(--color-matte-black)"
+                  maskPaths={maskPaths}
+                  maskId={maskId}
+                />
               </a>
             </li>
           ))}
         </ul>
 
-        <div className="flex w-full md:w-1/3 justify-between md: justify-center items-center h-full">
-          <animated.h1 className="text-4xl whitespace-nowrap flex font-bold md:text-8xl leading-[1.5] w-full md:w-1/3 md:self-start justify-between md:justify-center py-[1rem] md:p-[0]" style={{ opacity: scrollYProgress.to(v => 1 - v), color: "var(--softWhite)" }}>Evgeni Leonov
-          </animated.h1>
-          <div className="h-full flex py-[1rem] flex-col justify-center" onClick={() => openOrCloseOverlay(true)}>
-            <span className="md:hidden right-0 bg-white h-1 w-6 rounded-full mb-1"></span>
-            <span className="md:hidden right-0 bg-white h-1 w-6 rounded-full mt-1"></span>
-          </div>
-        </div>
+        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold leading-none text-[4.3rem] md:text-8xl leading-[1.5] w-full md:w-1/3 justify-between justify-center md:p-[0]">Evgeni Leonov
+        </h1>
 
-        <ul className="hidden md:flex w-1/3 justify-evenly self-end">
+        <ul className="hidden md:flex w-1/3 justify-evenly">
           {views.map(view => (
-            <Link key={view.name} href={view.link} className="text-2xl">
+            <Link key={view.name} href={view.link} className="text-2xl font-medium text-matte-black">
               {view.name}
             </Link>
           ))}
