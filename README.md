@@ -5,6 +5,11 @@
 
 ---
 
+⚠️ **Work in Progress**  
+This project is currently under active development. Features, design, and content are subject to change.
+
+---
+
 ## 🛠 Technologies Used
 
 This project is built with:
