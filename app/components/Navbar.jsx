@@ -30,12 +30,12 @@ export default function Navbar({ views }) {
           ))}
         </ul>
 
-        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold leading-none text-[4.3rem] md:text-8xl leading-[1.5] w-full md:w-1/3 justify-between justify-center md:p-[0]">Evgeni Leonov
+        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold leading-none text-[4.3rem] md:text-8xl leading-[1.5] w-full md:w-1/3 justify-between justify-center md:p-[0] font-evgeni">Evgeni Leonov
         </h1>
 
         <ul className="hidden md:flex w-1/3 justify-evenly">
           {views.map(view => (
-            <Link key={view.name} href={view.link} className="text-2xl font-medium text-matte-black">
+            <Link key={view.name} href={view.link} className="text-2xl font-medium text-matte-black font-evgeni">
               {view.name}
             </Link>
           ))}

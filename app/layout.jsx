@@ -45,7 +45,7 @@ export default async function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Libre+Franklin:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet"
         />
       </head>

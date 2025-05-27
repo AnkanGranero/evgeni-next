@@ -6,13 +6,14 @@
   --color-matte-black: #36362E;
   --color--peach: #FFC19;
   --color--pinkish: #FFB2B2;
-  --font-sans: 'Cormorant Garamond', serif;
+  --font-evgeni: 'Cormorant Garamond', serif;
+  --font-sans: 'Libre Franklin', sans-serif;
+  --color-blackround: #11100c;
 }
 
   body {
-    background-color: var(--black);
+    background-color: var(--color-blackround);
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
     font-family: var(--font-sans);
     font-size: 16px;
   }

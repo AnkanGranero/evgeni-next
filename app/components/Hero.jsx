@@ -27,7 +27,7 @@ export default function Hero({ text }) {
 
           <animated.section style={{opacity: scrollYProgress.to(v => 1 + v), transform: scrollYProgress.to(v => `translateY(-${v * 250}px)`)}} className="flex justify-center w-full bg-test-500">
             <div className="text-white text-center max-w-5xl" >
-              <div className='md:text-2xl p-8'>{text}</div>
+              <div className='md:text-3xl p-8'>{text}</div>
             </div>
           </animated.section>
   
