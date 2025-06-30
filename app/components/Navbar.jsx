@@ -1,9 +1,5 @@
 "use client";
 import Link from "next/link"
-import { ScrollContext } from "./ScrollProvider";
-import { useContext, useState } from "react";
-import { animated } from "@react-spring/web";
-import { Overlay } from "./Overlay"
 import SvgIcon from "./icons/SvgIcon"
 import socialMediaIcons from "./icons/socialMediaIcons"
 
@@ -14,11 +10,14 @@ export default function Navbar({ views }) {
   return (
     <header className="fixed top-0 left-0 w-full z-50 h-[9rem] md:h-[8rem] p-[1rem] md:p-0 bg-orange">
 
-      <nav className="w-full mx-auto flex flex-col md:flex-row justify-evenly items-center h-full z-10 text-black bg-transparent text-white relative">
+      <nav role="navigation"
+        aria-label="Main navigation"
+        className="w-full mx-auto flex flex-col md:flex-row justify-evenly items-center h-full z-10 text-black bg-transparent text-white relative">
         <ul className="flex md:h-3/5 h-[3rem] w-full md:w-1/3 justify-between md:justify-evenly md:items-end list-none">
           {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
             <li key={index} className="h-full md:h-[100%]">
-              <a href={href} target="_blank" rel="noopener noreferrer">
+              <a href={href} target="_blank" rel="noopener noreferrer"
+                aria-label={`Link to ${maskId.replace(/mask/i, '')}`}>
                 <SvgIcon
                   className="block max-w-full max-h-full"
                   fill="var(--color-matte-black)"
@@ -35,9 +34,9 @@ export default function Navbar({ views }) {
 
         <ul className="hidden md:flex w-1/3 justify-evenly">
           {views.map(view => (
-            <Link key={view.name} href={view.link} className="text-2xl font-medium text-matte-black font-evgeni">
-              {view.name}
-            </Link>
+            <li key={view.name}  >
+              <Link href={view.link} className="text-2xl font-medium text-matte-black font-evgeni">{view.name}</Link>
+            </li>
           ))}
         </ul>
       </nav>
