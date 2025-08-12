@@ -1,37 +1,21 @@
-import { getGalleryImages } from "@/lib/contentfulUtils"
-import { useState } from "react";
-export default async function Gallery() {
+import { getGalleryImages } from "@/lib/contentful/contentfulUtils.js"
+import Link from "next/link";
+import Image from "next/image";
 
-    const galleryImages = await getGalleryImages();
-    const [isModalOpen, setIsModalOpen] = useState(false);
-    const [selectedImage, setSelectedImage] = useState(null);
+export default async function Page() {
 
-    const openModal = (imgUrl:string) => {
-        setIsModalOpen(true);
-        setSelectedImage(imgUrl);
-    }
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-        setSelectedImage(null);
-    }
-
-
-
-
-
+    const images = await getGalleryImages();
+    console.log("images", images);
 
     return (
-        <main>
-            <p> {console.log(galleryImages)}
-            </p>
-            <ul className="mt-[8rem] grid grid-cols-5 gap-2 p-0 list-none">
-                {galleryImages.map(item => (
-                    <li className="aspect-square overflow-hidden cursor-pointer" key={item.url} onClick={() => openModal(item.url)}>
-                        <img className="w-full h-full object-cover block" src={item.url} alt="" />
-                    </li>
-                ))}
-            </ul>
-        </main>
+        <ul className="mt-[8rem] grid grid-cols-5 gap-2 p-0 list-none">
+            {images.map(image => (
+                <Link className="aspect-square overflow-hidden cursor-pointer" key={image.alt} href={`/gallery/photo/${image.id}`}>
+                    <Image className="w-full h-full object-cover block" src={image.fullUrl} width={500}
+                        height={500}
+                        alt="Picture of the author" />
+                </Link>
+            ))}
+        </ul>
     )
 }
