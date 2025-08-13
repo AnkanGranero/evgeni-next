@@ -15,8 +15,8 @@ export function buildImageVariants(asset: RawAsset, opts: VariantOpts = {}): Gal
   const h = file?.details?.image?.height ?? 1000;
   const alt = asset.fields?.description ?? asset.fields?.title ?? "";
 
-  const thumb = { w: 400, h: 400, fit: "thumb", q: 70, fm: "webp", ...(opts.thumb || {}) };
-  const full  = { w: 1600, q: 80, fm: "webp", ...(opts.full || {}) };
+  const thumb = { w: 400, h: 400, fit: "thumb", q: 40, fm: "webp", ...(opts.thumb || {}) };
+  const full  = { w: 1600, q: 90, fm: "webp", ...(opts.full || {}) };
   const blur  = { w: 20, q: 20, fm: "webp", ...(opts.blur || {}) };
 
   return {
