@@ -1,7 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/Navbar"
 import { ScrollProvider } from "./components/ScrollProvider"
-import { getHeaderMenuItems } from "../lib/contentfulUtils";
 import Footer from "./components/Footer"
 import { barlowCondensed } from "../styles/fonts"
 import "../styles/globals.css";
