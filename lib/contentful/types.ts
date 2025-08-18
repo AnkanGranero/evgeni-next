@@ -1,3 +1,5 @@
+import { Document as CfDocument} from '@contentful/rich-text-types';
+
 export type RawAsset = {
     sys: { id: string };
     fields: {
@@ -37,3 +39,13 @@ export type GalleryEntry = {
   sys: { id: string };
   fields: { image?: CFAsset };
 };
+
+export type PresentationFields = {
+  presentationstext?: CfDocument;
+  headerImage?: CFAsset;
+};
+
+export type PresentationEntry = {
+  sys: { id: string},
+  fields: PresentationFields
+}

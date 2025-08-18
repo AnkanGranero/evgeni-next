@@ -2,8 +2,9 @@ import Image from "next/image";
 import { getFullImage } from "@/lib/contentful/gallery"
 
 
-export default async function PhotoModal({ params }: { params: { id: string } }) {
-    const img = await getFullImage(params.id)
+export default async function PhotoModal({ params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+        const img = await getFullImage(id)
     if (!img) return null;
 
     return (
