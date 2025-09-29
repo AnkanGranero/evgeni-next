@@ -4,7 +4,7 @@ import { useScroll } from "@react-spring/web"
 
 export const ScrollContext = createContext();
 
-export const ScrollProvider = ({ children }) => {
+export function ScrollProvider({ children }) {
 
     const scrollRef = useRef();
     const { scrollYProgress } = useScroll({ container: scrollRef })
