@@ -5,6 +5,7 @@ import Footer from "./components/Footer"
 import { barlowCondensed } from "../styles/fonts"
 import "../styles/globals.css";
 import { views } from "../lib/views"
+import { Providers } from './providers';
 
 
 
@@ -54,7 +55,7 @@ export default async function RootLayout({ children }) {
 
 
 
-        <ScrollProvider>
+        <Providers>
           <Navbar views={views} />
 
 
@@ -66,7 +67,7 @@ export default async function RootLayout({ children }) {
           </main>
           <Footer views={views} />
 
-        </ScrollProvider>
+        </Providers>
       </body>
     </html>
   );
