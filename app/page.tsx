@@ -1,6 +1,6 @@
 import { getPresentationText } from '@/lib/contentful/richText';
-import ParallaxHero from './components/ParallaxHero';
 import { notFound } from 'next/navigation';
+import Hero from './components/Hero';
 export default async function Home() {
   const presentationsText = await getPresentationText();
   console.log(presentationsText, "texten");
@@ -10,7 +10,7 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen">
-      <ParallaxHero presentationsText={presentationsText}></ParallaxHero>
+      <Hero presentationText={presentationsText}></Hero>
     </div>
   );
 }

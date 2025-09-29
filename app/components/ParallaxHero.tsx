@@ -1,11 +1,8 @@
 'use client';
 import type { ReactNode } from 'react';
 
-import { useRef } from 'react';
-import { useContext } from 'react';
-import { ScrollContext } from './ScrollProvider';
-import useIsMobile from '../hooks/useIsMobile';
 import { Parallax } from 'react-scroll-parallax';
+import { Providers } from '../providers';
 
 type ParallaxHeroProps = {
   presentationsText: {
@@ -16,17 +13,15 @@ type ParallaxHeroProps = {
 
 export default function ParallaxHero({ presentationsText }: ParallaxHeroProps) {
   const { text } = presentationsText;
-  /*   const containerRef = useRef<HTMLDivElement | null>(null); */
-  const isMobile = useIsMobile();
-  /*   const backgroundStartSize = isMobile ? 250 : 120; */
+
 
   return (
+    <Providers>
+
     <div className="min-h-screen">
       <Parallax
         scale={[3.5, 0.5]}
         speed={-50}
-      
-   
       >
         <div className="bg-center min-h-[100vh] md:min-h-screen w-full bg-no-repeat bg-[url(/Evgeni_Leonov_foto.jpg)] bg-[length:100%]" />
       </Parallax>
@@ -36,5 +31,7 @@ export default function ParallaxHero({ presentationsText }: ParallaxHeroProps) {
         </section>
       </Parallax>
     </div>
+    </Providers>
+
   );
 }

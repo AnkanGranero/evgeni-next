@@ -1,11 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import Navbar from "./components/Navbar"
-import { ScrollProvider } from "./components/ScrollProvider"
 import Footer from "./components/Footer"
 import { barlowCondensed } from "../styles/fonts"
 import "../styles/globals.css";
 import { views } from "../lib/views"
-import { Providers } from './providers';
+import { ReactNode } from "react";
 
 
 
@@ -38,7 +37,7 @@ export const metadata = {
   }
 };
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children }: {children: ReactNode}) {
 
   return (
     <html lang="sv" className={barlowCondensed.className}>
@@ -55,7 +54,7 @@ export default async function RootLayout({ children }) {
 
 
 
-        <Providers>
+
           <Navbar views={views} />
 
 
@@ -65,9 +64,8 @@ export default async function RootLayout({ children }) {
             {children}
 
           </main>
-          <Footer views={views} />
+          <Footer/>
 
-        </Providers>
       </body>
     </html>
   );
