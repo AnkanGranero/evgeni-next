@@ -9,7 +9,7 @@ export default function Navbar({ views }) {
       <nav
         role="navigation"
         aria-label="Main navigation"
-        className="w-full mx-auto flex flex-col md:flex-row justify-evenly items-center h-full z-10 text-black bg-transparent text-white relative"
+        className="w-full mx-auto flex flex-col md:flex-row justify-evenly items-center h-full z-10 bg-transparent relative"
       >
         <ul className="flex md:h-3/5 h-[3rem] w-full md:w-1/3 justify-between md:justify-evenly md:items-end list-none">
           {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
@@ -31,7 +31,7 @@ export default function Navbar({ views }) {
           ))}
         </ul>
 
-        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold leading-none text-[4.3rem] md:text-8xl leading-[1.5] w-full md:w-1/3 justify-between justify-center md:p-[0] font-evgeni">
+        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold text-[4.3rem] md:text-8xl leading-[1.5] w-full md:w-1/3 justify-center md:p-[0] font-evgeni">
           Evgeni Leonov
         </h1>
 

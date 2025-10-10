@@ -1,16 +1,11 @@
 import { getPresentationText } from '@/lib/contentful/richText';
-import { notFound } from 'next/navigation';
-import Hero from './components/Hero';
+import ParallaxText from './components/parallax-text';
 export default async function Home() {
-  const presentationsText = await getPresentationText();
-  console.log(presentationsText, "texten");
-  
 
-  if(!presentationsText) return notFound();
-
+  const { text } = await getPresentationText();
   return (
     <div className="min-h-screen">
-      <Hero presentationText={presentationsText}></Hero>
+    <ParallaxText text={text} background="/Evgeni_Leonov_foto.jpg"/>
     </div>
   );
 }

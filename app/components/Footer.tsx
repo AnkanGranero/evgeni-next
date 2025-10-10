@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="p-4 text-center mt-8 h-[2.5rem] flex text-white justify-center bottom-0 w-full">
+    <footer className="p-4 text-center h-[2.5rem] flex text-white justify-center bottom-0 w-full">
       <address className="not-italic flex items-center space-x-4">
         <p>
           <span className="">Kontakta mig:</span> 070 402 46 06
