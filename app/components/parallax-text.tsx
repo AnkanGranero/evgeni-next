@@ -46,8 +46,8 @@ export default function ParallaxText({
         ref={textContainer}
       >
         <motion.div
-          className={`absolute -z-10 inset-0 bg-[url(${background})] bg-top bg-[length:150%] 2xl:bg-[length:110%] bg-no-repeat`}
-          style={{ y: yBG, opacity }}
+          className={`absolute -z-10 inset-0 bg-top bg-[length:150%] 2xl:bg-[length:110%] bg-no-repeat`}
+          style={{ y: yBG, opacity, backgroundImage: `url(${background})` }}
         />
         <motion.article
           className="relative z-10 text-white text-center max-w-5xl md:text-3xl p-8 w-full pt-[70rem]"
