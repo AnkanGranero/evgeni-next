@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
-import SvgIcon from './icons/SvgIcon';
-import socialMediaIcons from './icons/socialMediaIcons';
+import SvgIcon from './icons/svg-icon';
+import socialMediaIcons from './icons/social-media-icons';
 
 export default function Navbar({ views }) {
   return (

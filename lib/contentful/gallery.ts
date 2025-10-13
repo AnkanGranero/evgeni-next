@@ -1,6 +1,6 @@
 import 'server-only';
 import { fetchEntries, client } from "./contentful";
-import { buildImageVariants } from "./imageVariants";
+import { buildImageVariants } from "./image-variants";
 import { GalleryEntry, GalleryImage, RawAsset } from "./types";
 
 
