@@ -1,20 +1,16 @@
 export default function Footer() {
   return (
-    <footer className="p-4 text-center h-[2.5rem] flex text-white justify-center bottom-0 w-full">
-      <address className="not-italic flex items-center space-x-4">
-        <p>
-          <span className="">Kontakta mig:</span> 070 402 46 06
-        </p>
+    <footer className="p-4 text-center h-[4rem] flex justify-center bottom-0 w-full bg-orange">
+      <address className="not-italic flex items-center space-x-4 text-xl">
         <a
           href="mailto:evgenileonov1987@gmail.com"
           aria-label="Skicka e-post till evgenileonov1987@gmail.com"
-          className="mr-4 ml-4"
+          className="mr-4 ml-4 flex items-center"
         >
-          <img className="h-6 w-6" src="/icons/mail.png" alt="mailikon" />
+           <span className="mr-5">Kontakta mig:</span>
+          <img className=" h-6 inline mr-1" src="/icons/mail.png" alt="mailikon" />
+          <span className="hidden md:inline">evgenileonov1987@gmail.com</span>
         </a>
-        <p>
-          <span className="hidden md:block">evgenileonov1987@gmail.com</span>
-        </p>
       </address>
     </footer>
   );
