@@ -11,7 +11,7 @@ export default function Navbar({ views }) {
         aria-label="Main navigation"
         className="w-full mx-auto flex flex-col md:flex-row justify-evenly items-center h-full z-10 bg-transparent relative"
       >
-        <ul className="flex md:h-3/5 h-[3rem] w-full md:w-1/3 justify-between md:justify-evenly md:items-end list-none">
+        <ul className="flex md:h-3/5 h-[3rem] w-full md:w-2/5 lg:w-1/3 justify-between md:justify-evenly md:items-end list-none">
           {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
             <li key={index} className="h-full md:h-[100%]">
               <a
@@ -31,11 +31,11 @@ export default function Navbar({ views }) {
           ))}
         </ul>
 
-        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold text-[4.3rem] md:text-8xl leading-[1.5] w-full md:w-1/3 justify-center md:p-[0] font-evgeni">
+        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold text-[3.5rem] md:text-7xl  lg:text-8xl leading-[1.5] w-full md:w-1/3 justify-center md:p-[0] font-evgeni">
           Evgeni Leonov
         </h1>
 
-        <ul className="hidden md:flex w-1/3 justify-evenly">
+        <ul className="bg-orange w-full fixed bottom-0 lg:relative p-3 lg:p-0 flex lg:w-1/3 justify-evenly">
           {views.map((view) => (
             <li key={view.name}>
               <Link href={view.link} className="text-2xl font-medium text-matte-black font-evgeni">
