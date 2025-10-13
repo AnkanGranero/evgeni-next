@@ -1,5 +1,5 @@
-import { getPresentationText } from '@/lib/contentful/richText';
-import ParallaxText from './components/parallax-text';
+import { getPresentationText } from '@/lib/contentful/rich-text';
+import ParallaxText from '@/components/parallax-text';
 export default async function Home() {
 
   const { text } = await getPresentationText();

@@ -1,5 +1,5 @@
-import Modal from '@/app/components/Modal';
-import ImageDetail from '@/app/components/ImageDetail';
+import Modal from '@/components/modal';
+import ImageDetail from '@/components/image-detail';
 import { getFullImage } from '@/lib/contentful/gallery';
 import { notFound } from 'next/navigation';
 
