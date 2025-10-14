@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
 .content-grid {
-  --gap: clamp(1rem, 6vw, 3rem);
-  --full: minmax(var(--gap), 1fr);
-  --content: min(50ch, 100% - var(--gap) * 2);
+  --space: clamp(0.75rem, 2.5vw, 1.5rem); /* används för gap mellan saker */
+  --sides: clamp(0.75rem, 3vw, 1.75rem);  /* enbart sidogutter */
+
+  --full: minmax(var(--sides), 1fr);
+  --content: min(60ch, calc(100% - var(--sides) * 2));
   --popout: minmax(0, 2rem);
-  --feature: minmax(0, 5rem);
+    --feature: minmax(0, clamp(8rem, 80vw, 80rem));
+
 
   display: grid;
   grid-template-columns:
@@ -13,11 +16,13 @@
     [feature-start] var(--feature)
     [popout-start] var(--popout)
     [content-start] var(--content) [content-end]
-    var(--popout) [popout-end]
+    var(--popout)  [popout-end]
     var(--feature) [feature-end]
-    var(--full) [full-end];
+    var(--full)    [full-end];
+
+
 }
-.content > * {
+.content-grid > * {
   grid-column: content;
 }
 .popout {
