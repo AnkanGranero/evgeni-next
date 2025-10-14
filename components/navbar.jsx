@@ -5,11 +5,11 @@ import socialMediaIcons from './icons/social-media-icons';
 
 export default function Navbar({ views }) {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 h-[9rem] md:h-[8rem] pb-[1rem] md:p-0 bg-orange content-grid">
+    <header className="fixed top-0 left-0 w-full z-50 h-[9rem] md:h-[8rem] pb-[1rem] md:p-0 bg-orange">
       <nav
         role="navigation"
         aria-label="Main navigation"
-        className="feature w-full mx-auto flex flex-col-reverse md:flex-row-reverse lg:flex-row justify-between xl:justify-between xl:px-[3rem] items-center h-full z-10 bg-transparent relative"
+        className=" w-full mx-auto flex flex-col-reverse md:flex-row-reverse lg:flex-row justify-between xl:justify-between md:px-[3rem] items-center h-full z-10 bg-transparent relative"
       >
         <ul className="flex h-[3rem] lg:h-3/5  w-full md:w-2/5 lg:w-1/4 xl:w-1/3 justify-center md:justify-start md:items-end list-none gap-3 2xl:gap-10">
           {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
