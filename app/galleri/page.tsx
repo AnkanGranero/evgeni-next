@@ -11,7 +11,7 @@ export default async function Page() {
         <li key={image.id}>
           <Link
             className="aspect-square overflow-hidden cursor-pointer"
-            href={`/gallery/${image.id}`}
+            href={`/galleri/${image.id}`}
           >
             <Image
               className="w-full h-full object-cover block"

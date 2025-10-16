@@ -13,8 +13,8 @@ export type RawAsset = {
 export type CFImageFile = {
   fields: {
     file: {
-      details?: { image?: { width?: number; height?: number } };
-      url?: string;
+      details: { image?: { width?: number; height?: number } };
+      url: string;
     };
     title: string;
   };
