@@ -1,4 +1,4 @@
-import { getGalleryImages } from '@/lib/contentful/gallery';
+import { getGalleryImages } from '@/lib/contentful/gallery/api';
 import Link from 'next/link';
 import Image from 'next/image';
 

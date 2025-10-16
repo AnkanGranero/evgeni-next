@@ -1,30 +1,23 @@
-import { Document as CfDocument} from '@contentful/rich-text-types';
-
 export type RawAsset = {
-    sys: { id: string };
-    fields: {
-        title?: string;
-        description?: string;
-        file: {
-            url: string;
-            details?: { image?: { width: number; height: number } }
-        }
-    }
-}
-
-export type GalleryImage = {
-    id: string;
-    alt: string;
-    w: number;
-    h: number;
-    thumbUrl: string;
-    fullUrl: string;
-    blurUrl: string;
-}
+  sys: { id: string };
+  fields: {
+    title?: string;
+    description?: string;
+    file: {
+      url: string;
+      details?: { image?: { width: number; height: number } };
+    };
+  };
+};
 
 export type CFImageFile = {
-  url?: string;
-  details?: { image?: { width?: number; height?: number } };
+  fields: {
+    file: {
+      details?: { image?: { width?: number; height?: number } };
+      url?: string;
+    };
+    title: string;
+  };
 };
 
 export type CFAsset = {
@@ -34,18 +27,3 @@ export type CFAsset = {
     file?: CFImageFile;
   };
 };
-
-export type GalleryEntry = {
-  sys: { id: string };
-  fields: { image?: CFAsset };
-};
-
-export type PresentationFields = {
-  presentationstext?: CfDocument;
-  headerImage?: CFAsset;
-};
-
-export type PresentationEntry = {
-  sys: { id: string},
-  fields: PresentationFields
-}

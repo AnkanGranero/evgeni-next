@@ -1,5 +1,6 @@
-import { toHttps } from "../url";
-import type { GalleryImage, RawAsset } from "./types";
+import { toHttps } from "../../url";
+import type {  RawAsset } from "../types";
+import { GalleryImage } from "./types";
 
 
 type VariantOpts = {
