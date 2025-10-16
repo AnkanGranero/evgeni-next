@@ -1,4 +1,3 @@
-import { Asset } from "contentful";
 import { fetchEntries } from "../api";
 import { NewsEntry, NewsSkeleton, TransformedNewsItem } from "./types";
 
