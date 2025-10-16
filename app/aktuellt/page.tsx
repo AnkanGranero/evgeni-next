@@ -7,36 +7,14 @@ import { getLatest } from "@/lib/contentful/latest/api";
 
 export default async function LatestPage() {
   const latest = await getLatest();
-console.log("latest---------",latest);
 
   if (!latest) return notFound;
-
-/*     return (
-    <main className="bg-white content-grid">
-      <ul className="">
-        {latest.length &&
-          latest.map((item) => {
-            return (
-              <li key={item.sys.id}>
-                {renderRichText(item.fields?.body)}
-                <Image
-                  src={`https:${item?.fields?.image?.fields?.file?.url}`}
-                  height={item?.image?.fields?.file?.details?.image?.height}
-                  width={item.image.fields?.file?.details?.image?.width}
-                  alt={item.image.fields?.title ?? ""}
-                ></Image>
-              </li>
-            );
-          })}
-      </ul>
-    </main>
-  ); */
 
   return (
     <main className="bg-white content-grid">
       <ul className="">
         {latest.length &&
-          latest.map((item) => {
+          latest.map((item: TransformedNewsItem) => {
             return (
               <li key={item.id}>
                 {renderRichText(item.body)}
