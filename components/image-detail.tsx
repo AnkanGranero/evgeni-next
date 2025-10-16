@@ -1,4 +1,4 @@
-import { GalleryImage } from '@/lib/contentful/types';
+import { GalleryImage } from '@/lib/contentful/gallery/types';
 import Image from "next/image"
 
 export default function ImageDetail({ image }: { image: GalleryImage }) {
