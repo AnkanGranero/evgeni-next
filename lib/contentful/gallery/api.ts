@@ -1,14 +1,14 @@
 import 'server-only';
-import { fetchEntries, client } from "./contentful";
+import { client } from "../client";
 import { buildImageVariants } from "./image-variants";
-import { GalleryEntry, GalleryImage, RawAsset } from "./types";
-
-
+import { RawAsset } from "../types";
+import { fetchEntries } from '../api';
+import { GalleryEntry, GalleryImage } from './types';
 
 export async function getGalleryImages(): Promise<GalleryImage[]> {
-
+    
     const items = (await fetchEntries("galleryImage")) as GalleryEntry[];
-
+    
     return items
         .map((item) => item.fields?.image as RawAsset | undefined)
         .filter((asset): asset is RawAsset => !!asset?.fields?.file?.url)

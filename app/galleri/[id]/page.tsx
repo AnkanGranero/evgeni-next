@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getFullImage } from "@/lib/contentful/gallery"
+import { getFullImage } from "@/lib/contentful/gallery/api"
 
 
 export default async function PhotoModal({ params }: { params: Promise<{ id: string }> }) {

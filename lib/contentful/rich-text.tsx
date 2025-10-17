@@ -6,10 +6,11 @@ import {
   type Inline,
   type Block,
 } from '@contentful/rich-text-types';
-import { PresentationEntry } from '@/lib/contentful/types';
+
 
 import { documentToReactComponents, type Options } from '@contentful/rich-text-react-renderer';
-import { fetchEntries } from './contentful';
+import { fetchEntries } from './api';
+import { PresentationEntry } from './presentation/types';
 
 function isHyperlink(node: Block | Inline): node is Inline & { data?: { uri?: string } } {
   return node.nodeType === INLINES.HYPERLINK;

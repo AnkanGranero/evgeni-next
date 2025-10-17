@@ -1,4 +1,6 @@
+import Image from "next/image"
 export default function Footer() {
+  
   return (
     <footer className="p-4 text-center h-[6rem] hidden lg:flex justify-center bottom-0 w-full bg-orange">
       <address className="not-italic flex items-center space-x-4 text-xl">
@@ -8,7 +10,7 @@ export default function Footer() {
           className="mr-4 ml-4 flex items-center"
         >
            <span className="mr-5">Kontakta mig:</span>
-          <img className=" h-6 mr-1" src="/icons/mail.png" alt="mailikon" />
+          <Image className=" h-6 mr-1" src="/icons/mail.png" alt="mailikon" height={100} width={100}/>
           <span>evgenileonov1987@gmail.com</span>
         </a>
       </address>
