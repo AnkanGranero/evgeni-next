@@ -2,19 +2,18 @@ import { renderRichText } from "@/lib/contentful/rich-text";
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { TransformedNewsItem } from "@/lib/contentful/latest/types";
 import { getLatest } from "@/lib/contentful/latest/api";
 
 export default async function LatestPage() {
   const latest = await getLatest();
 
-  if (!latest) return notFound;
-
+  if(!latest) return notFound();
   return (
     <main className="bg-white content-grid">
       <ul className="">
         {latest.length &&
-          latest.map((item: TransformedNewsItem) => {
+        //ask about help in fetch so I don't have to set any here
+          latest.map((item:any) => {
             return (
               <li key={item.id}>
                 {renderRichText(item.body)}

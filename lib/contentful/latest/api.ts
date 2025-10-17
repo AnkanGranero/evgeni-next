@@ -1,18 +1,27 @@
 import { fetchEntries } from "../api";
-import { NewsEntry, NewsSkeleton, TransformedNewsItem } from "./types";
+import { client } from "../client";
+import { TypeNewsItem,TypeNewsItemSkeleton} from "./types";
+
+//this is not used right now, delete if not needed
+export async function fetchNewsItems(): Promise<TypeNewsItem<never, 'sv-SE'>[]> {
+  const response = await client.getEntries<TypeNewsItemSkeleton>({
+    content_type: "newsItem",
 
 
-export async function getLatest2() {
-  const response = await fetchEntries("newsItem");
-  return response
-
-}
-
-export async function getLatest(): Promise<TransformedNewsItem[]> {
-  const response = await fetchEntries<NewsSkeleton>("newsItem");
-  return response.map((item: NewsEntry) => {
-  
-    return { id: item.sys.id, image: item.fields.image, body: item.fields.body  };
   });
-
+  return response.items
 }
+
+export async function getLatest() {
+  const response = await fetchEntries<TypeNewsItemSkeleton>("newsItem");
+  return response.map((item) => {
+    const image = item.fields.image;
+    const id = item.sys.id;
+    const body = item.fields.body
+
+    return { image, id, body}
+  })
+  
+
+
+} 

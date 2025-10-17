@@ -1,17 +1,7 @@
-import { Entry, EntryFields, EntrySkeletonType } from "contentful";
-import {  CFImageFile } from "../types";
-import type { Document as CfDocument } from "@contentful/rich-text-types";
+import type { Asset, ChainModifiers, Entry, EntryFieldTypes, EntrySkeletonType, LocaleCode } from "contentful";
 
-
-type NewsFields = {
-  title: EntryFields.Symbol;     
-  body: EntryFields.RichText;   
-  image?: CFImageFile;
-};
-
-
-export type NewsSkeleton = EntrySkeletonType<NewsFields, 'newsItem'>;
-export type NewsEntry = Entry<NewsSkeleton>
+import { CFImageFile } from '../types';
+import type { Document as CfDocument } from '@contentful/rich-text-types';
 
 export type TransformedNewsItem = {
   id: string;
@@ -19,4 +9,39 @@ export type TransformedNewsItem = {
   body: CfDocument;
 };
 
+export interface TypeNewsItemFields {
+    title?: EntryFieldTypes.Symbol;
+    body?: EntryFieldTypes.RichText;
+    image?: Asset;
+    date?: EntryFieldTypes.Date;
+    link?: EntryFieldTypes.Symbol;
+    linkText?: EntryFieldTypes.Symbol;
+}
 
+export type TypeNewsItemSkeleton = EntrySkeletonType<TypeNewsItemFields, "newsItem">;
+export type TypeNewsItem<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeNewsItemSkeleton, Modifiers, Locales>;
+
+export type manuallyCreatedNewsItemType = {
+  sys: {
+    id: string;
+  }
+  fields: {
+    title: string;
+    body: EntryFieldTypes.RichText;
+    image: {
+      fields: {
+        file: {
+          details: {
+            image: {
+              width: number;
+              height: number;
+            }
+          }
+          filename: string;
+          url: string;
+        }
+      }
+    }
+
+  }
+}
