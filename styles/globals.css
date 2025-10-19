@@ -6,7 +6,7 @@
 
   --full: minmax(var(--sides), 1fr);
   --content: min(60ch, calc(100% - var(--sides) * 2));
-  --popout: minmax(0, 2rem);
+  --popout: minmax(0, 20rem);
   --feature: minmax(0, clamp(8rem, 80vw, 80rem));
 
   display: grid;
