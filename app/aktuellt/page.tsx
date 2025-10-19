@@ -9,20 +9,20 @@ export default async function LatestPage() {
 
   if(!latest) return notFound();
   return (
-    <main className="bg-white content-grid">
-      <ul className="">
+    <main className=" content-grid">
+      <ul className="popout mt-45 lg:mt-50 xl:mt-60 flex flex-col gap-20">
         {latest.length &&
         //ask about help in fetch so I don't have to set any here
           latest.map((item:any) => {
             return (
-              <li key={item.id}>
-                {renderRichText(item.body)}
+              <li key={item.id} className=" md:text-2xl 2xl:text-3xl text-white">
                 <Image
                   src={`https:${item?.image?.fields?.file?.url}`}
                   height={item?.image?.fields?.file?.details?.image?.height}
                   width={item?.image?.fields?.file?.details?.image?.width}
                   alt={item?.image?.fields?.title ?? ""}
-                ></Image>
+                  ></Image>
+                  {renderRichText(item.body)}
               </li>
             );
           })}
