@@ -1,7 +1,5 @@
 import { Entry, EntrySkeletonType } from "contentful";
 import { client } from "./client";
-/*  const space = process.env.CONTENTFUL_SPACE_ID;
-  const accessToken = process.env.CONTENTFUL_ACCESS_TOKEN; */
 
 export async function fetchEntries<T extends EntrySkeletonType>(
   contentType: T["contentTypeId"]
@@ -13,23 +11,16 @@ export async function fetchEntries<T extends EntrySkeletonType>(
   return response.items;
 }
 
-export async function fetchEntries2(contentType) {
-  const response = await client.getEntries({
-    limit: 4,
-    content_type: contentType,
-/*     select: ["sys.id","fields.image"] */
-/*     include:3 */
-  /*    select: ["fields"] */
+export async function fetchImageAssets<T extends EntrySkeletonType>(contentType: T["contentTypeId"]) {
+  const response = await client.getAssets(contentType);
+
+  return response.items.map((item) => {
+    const url = item.fields.file?.url;
+    const description = item.fields.description;
+    const dimensions = item.fields.file?.details.image;
+    const id = item.sys.id;
+    const title = item.fields.title
+    const image = {url,description, dimensions, id, title}
+    return image;
   });
-  return response.items;
-}
-/* export async function fetchEntriesByUrl(contentType) {
-  const response = await fetch(`/spaces/${space}/environments/master/entries/?access_token=${accessToken}&content_type=${contentType}&select=sys.id,fields.body`
-)
-return response.items;
-} */
-//to be implemented
-export async function fetchAssets() {
-  const response = await client.getAssets("newsItem");
-  return response.items;
 }
