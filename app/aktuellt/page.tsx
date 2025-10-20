@@ -2,11 +2,18 @@ import { renderRichText } from "@/lib/contentful/rich-text";
 
 import { notFound } from "next/navigation";
 import Image from "next/image";
-import { getLatest } from "@/lib/contentful/latest/api";
+import { getLatest, getLatest2 } from "@/lib/contentful/latest/api";
+import { fetchAssets } from "@/lib/contentful/api";
 
 export default async function LatestPage() {
   const latest = await getLatest();
-
+  const latest2 = await getLatest2();
+/*   const assets = await fetchAssets() */
+  console.log("getLatest2", latest2);
+  
+  
+/*   console.log("assets", assets); */
+  
   if(!latest) return notFound();
   return (
     <main className=" content-grid">

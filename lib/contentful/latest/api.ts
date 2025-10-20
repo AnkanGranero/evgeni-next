@@ -1,4 +1,4 @@
-import { fetchEntries } from "../api";
+import { fetchEntries, fetchEntries2, fetchEntriesByUrl } from "../api";
 import { client } from "../client";
 import { TypeNewsItem,TypeNewsItemSkeleton} from "./types";
 
@@ -24,4 +24,8 @@ export async function getLatest() {
   
 
 
+} 
+export async function getLatest2() {
+  const response = await fetchEntries2("newsItem");
+  return response;
 } 
