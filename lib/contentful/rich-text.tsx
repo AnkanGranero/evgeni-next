@@ -22,10 +22,10 @@ export function renderRichText(richText?: CfDocument): ReactNode {
   const options = {
     renderNode: {
       [BLOCKS.PARAGRAPH]: (_node: Block | Inline, children: ReactNode) => (
-        <p className="my-2"> {children} </p>
+        <p className="my-2 mb-10"> {children} </p>
       ),
-      [BLOCKS.HEADING_2]: (_node: Block | Inline, children: ReactNode) => (
-        <h2 className="text-xl font-bold"> {children} </h2>
+      [BLOCKS.HEADING_5]: (_node: Block | Inline, children: ReactNode) => (
+        <h2 className="text-2xl font-bold"> {children} </h2>
       ),
       [INLINES.HYPERLINK]: (node: Block | Inline, children: ReactNode) => {
         const href = isHyperlink(node) ? node.data?.uri : undefined;
