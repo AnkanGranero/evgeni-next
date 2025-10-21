@@ -42,8 +42,8 @@ export function renderRichText(richText?: CfDocument): ReactNode {
 
 export async function getPresentationText() {
   const response = await fetchEntries('presentation');
-
-  return mapPresentationText(response);
+  
+  return mapPresentationText(response.items);
 }
 export function mapPresentationText(entries: PresentationEntry[]): {
   text: ReactNode;

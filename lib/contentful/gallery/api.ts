@@ -7,7 +7,7 @@ import { GalleryEntry, GalleryImage } from './types';
 
 export async function getGalleryImages(): Promise<GalleryImage[]> {
     
-    const items = (await fetchEntries("galleryImage")) as GalleryEntry[];
+    const items = (await fetchEntries("galleryImage")).items as GalleryEntry[];
     
     return items
         .map((item) => item.fields?.image as RawAsset | undefined)

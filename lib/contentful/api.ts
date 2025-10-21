@@ -3,12 +3,13 @@ import { client } from "./client";
 
 export async function fetchEntries<T extends EntrySkeletonType>(
   contentType: T["contentTypeId"]
-): Promise<Entry<T>[]> {
+) {
   const response = await client.getEntries<T>({
     content_type: contentType,
+    include:10,
 
   });
-  return response.items;
+return response;
 }
 
 export async function fetchImageAssets<T extends EntrySkeletonType>(contentType: T["contentTypeId"]) {
@@ -20,7 +21,8 @@ export async function fetchImageAssets<T extends EntrySkeletonType>(contentType:
     const dimensions = item.fields.file?.details.image;
     const id = item.sys.id;
     const title = item.fields.title
-    const image = {url,description, dimensions, id, title}
+    const original = item;
+    const image = {url,description, dimensions, id, title, original}
     return image;
   });
 }
