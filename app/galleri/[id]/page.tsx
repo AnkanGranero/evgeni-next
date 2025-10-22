@@ -11,9 +11,9 @@ export default async function PhotoModal({ params }: { params: Promise<{ id: str
         < div className="mx-auto" >
             <Image
                 src={img.fullUrl}
-                alt={img.alt}
-                width={img.w}
-                height={img.h}
+                alt={img.description?? ""}
+                width={img.dimensions?.width}
+                height={img.dimensions?.height}
                 className="rounded-xl"
                 priority
                 sizes="90vw"

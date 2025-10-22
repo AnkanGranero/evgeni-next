@@ -122,6 +122,22 @@ export interface TransformedNewsItem {
   body?: EntryFieldTypes.RichText;
 }
 
+export type ImageObject = {
+  url: string;
+  description: string | undefined;
+  dimensions:
+    | {
+        width: number;
+        height: number;
+      }
+    | undefined;
+  id: string;
+  title: string | undefined;
+  thumbUrl: string;
+  fullUrl: string;
+  blurUrl: string;
+};
+
 
 
 

@@ -1,10 +1,11 @@
 import { GalleryImage } from '@/lib/contentful/gallery/types';
+import { ImageObject } from '@/lib/contentful/types';
 import Image from "next/image"
 
-export default function ImageDetail({ image }: { image: GalleryImage }) {
+export default function ImageDetail({ image }: { image: ImageObject }) {
   return (
     <div className="space-y-3">
-      <Image src={image.fullUrl} alt={image.id} className=" mx-auto block max-w-full max-h-[90vh] rounded-xl object-contain" width={image.w} height={image.w}/>
+      <Image src={image.fullUrl} alt={image.id} className=" mx-auto block max-w-full max-h-[90vh] rounded-xl object-contain" width={image.dimensions?.width} height={image.dimensions?.height}/>
     </div>
   );
 }
