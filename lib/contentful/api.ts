@@ -1,4 +1,4 @@
-import { Entry, EntrySkeletonType } from "contentful";
+import { EntrySkeletonType } from "contentful";
 import { client } from "./client";
 
 export async function fetchEntries<T extends EntrySkeletonType>(

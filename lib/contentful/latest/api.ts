@@ -1,5 +1,5 @@
-import { Asset, AssetDetails, AssetFile } from "contentful";
-import { fetchEntries, fetchImageAssets } from "../api";
+import { Asset } from "contentful";
+import { fetchEntries } from "../api";
 import { TypeNewsItemSkeleton } from "./types";
 import { type Document as CfDocument } from "@contentful/rich-text-types";
 
