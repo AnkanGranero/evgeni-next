@@ -51,11 +51,9 @@ export function mapPresentationText(entries: PresentationEntry[]): {
 } {
   const first = entries[0];
   const rich = first?.fields?.presentationstext;
-  console.log("rawdog", first.fields.headerImage?.fields);
   
   const raw = first?.fields?.headerImage?.fields?.file?.url;
   const headerImage = raw ? `http:${raw}?w=1600&fm=webp&q=80` : '';
-  console.log("rich", rich);
   
   return {
     text: renderRichText(rich),
