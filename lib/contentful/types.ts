@@ -106,15 +106,6 @@ export interface TypeNavLinkCircleFields {
 export type TypeNavLinkCircleSkeleton = EntrySkeletonType<TypeNavLinkCircleFields, "navLinkCircle">;
 export type TypeNavLinkCircle<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeNavLinkCircleSkeleton, Modifiers, Locales>;
 
-export interface TypePresentationFields {
-    presentationstext?: EntryFieldTypes.RichText;
-    headerImage?: EntryFieldTypes.AssetLink;
-}
-
-export type TypePresentationSkeleton = EntrySkeletonType<TypePresentationFields, "presentation">;
-export type TypePresentation<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypePresentationSkeleton, Modifiers, Locales>;
-
-
 export interface TransformedNewsItem {
   id: string;
   image?: EntryFieldTypes.AssetLink;
