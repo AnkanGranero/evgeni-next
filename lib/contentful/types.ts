@@ -17,7 +17,6 @@ export type CFImageFile = {
       url: string;
     };
     title: string;
-    url: string;
   };
 };
 

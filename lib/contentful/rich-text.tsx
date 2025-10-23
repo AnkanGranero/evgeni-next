@@ -16,7 +16,7 @@ function isHyperlink(node: Block | Inline): node is Inline & { data?: { uri?: st
   return node.nodeType === INLINES.HYPERLINK;
 }
 
-export function renderRichText(richText?: CfDocument): ReactNode {
+export function renderRichText(richText?: CfDocument | undefined): ReactNode {
   if (!richText) return null;
 
   const options = {
@@ -51,10 +51,12 @@ export function mapPresentationText(entries: PresentationEntry[]): {
 } {
   const first = entries[0];
   const rich = first?.fields?.presentationstext;
-
+  console.log("rawdog", first.fields.headerImage?.fields);
+  
   const raw = first?.fields?.headerImage?.fields?.file?.url;
   const headerImage = raw ? `http:${raw}?w=1600&fm=webp&q=80` : '';
-
+  console.log("rich", rich);
+  
   return {
     text: renderRichText(rich),
     headerImage,

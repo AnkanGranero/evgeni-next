@@ -1,4 +1,3 @@
-import { GalleryImage } from '@/lib/contentful/gallery/types';
 import { ImageObject } from '@/lib/contentful/types';
 import Image from "next/image"
 
