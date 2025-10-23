@@ -11,7 +11,6 @@ export default async function MediaPage({
   const { selectedMedia = "Actor" } = await params;
   const response = await fetchMedia(selectedMedia);
   const mediaClips = response;
-console.log("MD",response);
 
   if (!mediaClips) return notFound();
   return (
