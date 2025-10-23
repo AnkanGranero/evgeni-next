@@ -1,4 +1,4 @@
-import { toHttps } from "../../url";
+import { toHttps } from "../url";
 import type {  RawAsset } from "../types";
 import { GalleryImage } from "./types";
 
