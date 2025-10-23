@@ -1,32 +1,19 @@
 import 'server-only';
-import { client } from "../client";
-import { buildImageVariants } from "./image-variants";
-import { RawAsset } from "../types";
-import { fetchEntries } from '../api';
-import { GalleryEntry, GalleryImage } from './types';
+import { TypeGalleryImageSkeleton } from '../types';
+import { fetchAsset, fetchEntries } from '../api';
+import { createImageObject } from '../image';
 
-export async function getGalleryImages(): Promise<GalleryImage[]> {
-    
-    const items = (await fetchEntries("galleryImage")).items as GalleryEntry[];
-    
-    return items
-        .map((item) => item.fields?.image as RawAsset | undefined)
-        .filter((asset): asset is RawAsset => !!asset?.fields?.file?.url)
-        .map((asset) => buildImageVariants(asset))
+
+
+export async function getGalleryImages() {
+  const response = await fetchEntries<TypeGalleryImageSkeleton>('galleryImage');
+  const assets = response.includes?.Asset?.map(item => createImageObject(item));
+   return assets;
 }
 
-export async function getFullImage(id: string): Promise<GalleryImage | null> {
-
-    try {
-        const asset = await client.getAsset(id);
-        const raw = asset as unknown as RawAsset;
-        if (!raw?.fields?.file?.url) return null;
-        return buildImageVariants(raw);
-    }
-    catch (err) {
-        console.log(err, "error");
-
-        return null
-    }
-
+export async function getFullImage(assetId: string) {
+    const response = await fetchAsset(assetId);
+    const asset = createImageObject(response);
+    
+    return asset;
 }

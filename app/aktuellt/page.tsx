@@ -18,7 +18,7 @@ export default async function LatestPage() {
                 {
                 item?.image?.url?      
                 <Image
-                  src={`https:${item.image?.url}`}
+                  src={`${item.image?.url}`}
                   height={item.image.dimensions?.height}
                   width={item.image.dimensions?.width}
                   alt={item.image.description?? ""}

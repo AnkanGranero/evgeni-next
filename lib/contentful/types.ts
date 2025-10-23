@@ -17,7 +17,6 @@ export type CFImageFile = {
       url: string;
     };
     title: string;
-    url: string;
   };
 };
 
@@ -107,20 +106,27 @@ export interface TypeNavLinkCircleFields {
 export type TypeNavLinkCircleSkeleton = EntrySkeletonType<TypeNavLinkCircleFields, "navLinkCircle">;
 export type TypeNavLinkCircle<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypeNavLinkCircleSkeleton, Modifiers, Locales>;
 
-export interface TypePresentationFields {
-    presentationstext?: EntryFieldTypes.RichText;
-    headerImage?: EntryFieldTypes.AssetLink;
-}
-
-export type TypePresentationSkeleton = EntrySkeletonType<TypePresentationFields, "presentation">;
-export type TypePresentation<Modifiers extends ChainModifiers, Locales extends LocaleCode = LocaleCode> = Entry<TypePresentationSkeleton, Modifiers, Locales>;
-
-
 export interface TransformedNewsItem {
   id: string;
   image?: EntryFieldTypes.AssetLink;
   body?: EntryFieldTypes.RichText;
 }
+
+export type ImageObject = {
+  url: string;
+  description: string | undefined;
+  dimensions:
+    | {
+        width: number;
+        height: number;
+      }
+    | undefined;
+  id: string;
+  title: string | undefined;
+  thumbUrl: string;
+  fullUrl: string;
+  blurUrl: string;
+};
 
 
 

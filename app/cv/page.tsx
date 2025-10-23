@@ -3,7 +3,6 @@ import { renderRichText } from "@/lib/contentful/rich-text";
 
 export default async function CVPage() {
   const cvItems = await fetchCVItems();
-  console.log("cv", cvItems);
 
   return (
     <main className="content-grid">

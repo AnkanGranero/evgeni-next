@@ -9,7 +9,8 @@ export default async function MediaPage({
   params: Promise<{ selectedMedia?: MediaKey }>;
 }) {
   const { selectedMedia = "Actor" } = await params;
-  const mediaClips = await fetchMedia(selectedMedia);
+  const response = await fetchMedia(selectedMedia);
+  const mediaClips = response;
 
   if (!mediaClips) return notFound();
   return (
@@ -29,7 +30,7 @@ export default async function MediaPage({
         </ul>
       </header>
       <ul className="popout mt-10 lg:mt-20 flex w-full justify-center gap-15 flex-col ">
-        {mediaClips.map((item: any) => {
+        {mediaClips.map((item) => {
           return (
             <li className="text-white w-full" key={item.sys.id}>
               <iframe
