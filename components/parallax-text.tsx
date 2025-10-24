@@ -50,7 +50,7 @@ export default function ParallaxText({
           style={{ y: yBG, opacity, backgroundImage: `url(${background})` }}
         />
         <motion.article
-          className="relative z-10 text-white text-center max-w-5xl md:text-3xl p-8 w-full pt-[30rem] md:pt-[50rem] lg:pt-[70rem]"
+          className="relative z-10 text-white text-center max-w-5xl lg:text-3xl p-8 w-full pt-[30rem] md:pt-[40rem] xl:pt-[50rem] 4xl:pt-[70rem]"
           style={{ y: ySpringText }}
         >
           {text}

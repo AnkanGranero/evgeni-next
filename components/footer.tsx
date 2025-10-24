@@ -10,7 +10,7 @@ export default function Footer() {
           className="mr-4 ml-4 flex items-center"
         >
            <span className="mr-5">Kontakta mig:</span>
-          <Image className=" h-6 mr-1" src="/icons/mail.png" alt="mailikon" height={100} width={100}/>
+          <Image className="w-auto h-6 mr-1" src="/icons/mail.png" alt="mailikon" height={100} width={100}/>
           <span>evgenileonov1987@gmail.com</span>
         </a>
       </address>
