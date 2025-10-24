@@ -11,7 +11,7 @@ export default function Navbar({ views }) {
         aria-label="Main navigation"
         className="feature w-full mx-auto flex flex-col-reverse md:flex-row-reverse lg:flex-row justify-between xl:justify-between items-center h-full z-10 bg-transparent relative"
       >
-        <ul className="flex h-[3rem] xl:h-3/5  w-full xl:w-1/4 justify-center md:justify-end lg:justify-start md:items-end list-none gap-3 2xl:gap-10 md:mt-3 lg:mt-0">
+        <ul className="flex h-[3rem] xl:h-1/2 2xl:h-3/5  w-full xl:w-1/3 justify-center md:justify-end lg:justify-start md:items-end list-none gap-3 2xl:gap-10 md:mt-3 lg:mt-0">
           {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
             <li key={index} className="h-full md:h-[100%]">
               <a
@@ -35,7 +35,7 @@ export default function Navbar({ views }) {
           Evgeni Leonov
         </h1>
 
-        <ul className="bg-orange lg:bg-transparent w-full fixed bottom-0 left-0 lg:relative p-3 lg:p-0 lg:pt-5 flex xl:w-1/4 justify-evenly">
+        <ul className="bg-orange lg:bg-transparent w-full fixed bottom-0 left-0 lg:relative p-3 lg:p-0 lg:pt-5 flex xl:w-1/3 justify-evenly">
           {views.map((view) => (
             <li key={view.name}>
               <Link href={view.link} className="text-2xl xl:text-3xl font-medium text-matte-black font-evgeni">
