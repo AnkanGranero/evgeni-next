@@ -177,7 +177,7 @@ https://evgeni-next.vercel.app/
 
 ---
 
-## 📬 Contact
+## Contact
 
 **Created by:** Andreas Granér  
 📧 **Email:** [Andreas@graner.me](mailto:Andreas@graner.me)  
