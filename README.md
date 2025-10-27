@@ -33,14 +33,14 @@ The homepage was created with typescript and next and its content populated with
 
 
 
-## 🛠 Technologies Used
+## Technologies Used
 
 - [Next.js v.15 (App Router)](https://nextjs.org)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind](https://tailwindcss.com/)
-- [Contentful] (https://www.contentful.com/)
-- [Framer-motion] (https://www.npmjs.com/package/framer-motion)
-- [Lenis] (https://www.npmjs.com/package/lenis)
+- [Contentful](https://www.contentful.com/)
+- [Framer-motion](https://www.npmjs.com/package/framer-motion)
+- [Lenis](https://www.npmjs.com/package/lenis)
 
 
 ---
@@ -181,4 +181,3 @@ https://evgeni-next.vercel.app/
 
 **Created by:** Andreas Granér  
 📧 **Email:** [Andreas@graner.me](mailto:Andreas@graner.me)  
-🐙 **GitHub:** [AnkanGranero](https://github.com/AnkanGranero)
