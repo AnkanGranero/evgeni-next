@@ -11,9 +11,9 @@ export default function Navbar({ views }) {
         aria-label="Main navigation"
         className="feature w-full mx-auto flex flex-col-reverse md:flex-row-reverse lg:flex-row justify-between xl:justify-between items-center h-full z-10 bg-transparent relative"
       >
-        <ul className="flex h-[3rem] xl:h-1/2 2xl:h-3/5  w-full xl:w-1/3 justify-center md:justify-end lg:justify-start md:items-end list-none gap-3 2xl:gap-10 md:mt-3 lg:mt-0">
+        <ul className="flex h-[3rem] lg:h-1/2 3xl:h-3/5  w-full xl:w-1/3 justify-center md:justify-end lg:justify-start md:items-end list-none gap-3 2xl:gap-10 md:mt-3 lg:mt-0">
           {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
-            <li key={index} className="h-full md:h-[100%]">
+            <li key={index} className="h-full">
               <a
                 href={href}
                 target="_blank"
