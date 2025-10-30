@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 .content-grid {
   --space: clamp(0.75rem, 2.5vw, 1.5rem); /* används för gap mellan saker */
@@ -22,12 +22,17 @@
 .content-grid > * {
   grid-column: content;
 }
+.content {
+  grid-column: content;
+}
 .popout {
   grid-column: popout;
 }
+
 .feature {
   grid-column: feature;
 }
+
 .full {
   grid-column: full;
 }
@@ -35,11 +40,11 @@
 @theme {
   --color-orange: #ffc19a;
   --color-matte-black: #36362e;
-  --color--peach: #FFC19;
   --color--pinkish: #ffb2b2;
-  --font-evgeni: "Cormorant Garamond", serif;
-  --font-sans: "Libre Franklin", sans-serif;
+  --font-evgeni: 'Cormorant Garamond', serif;
+  --font-sans: 'Libre Franklin', sans-serif;
   --color-blackround: #11100c;
+  --color-forground: white;
 }
 
 body {
