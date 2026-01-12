@@ -9,9 +9,9 @@ export default function Navbar({ views }) {
       <nav
         role="navigation"
         aria-label="Main navigation"
-        className="feature w-full mx-auto flex flex-col-reverse md:flex-row-reverse lg:flex-row justify-between xl:justify-between items-center h-full z-10 bg-transparent relative"
+        className="feature w-full mx-auto flex flex-col-reverse md:flex-row-reverse xl:flex-row justify-between xl:justify-between items-center h-full z-10 bg-transparent relative"
       >
-        <ul className="flex h-[3rem] lg:h-1/2 3xl:h-3/5  w-full xl:w-1/3 justify-center md:justify-end lg:justify-start md:items-end list-none gap-3 2xl:gap-10 md:mt-3 lg:mt-0">
+        <ul className="flex h-[3rem] xl:h-1/2 3xl:h-3/5  w-full xl:w-1/3 justify-center md:justify-end lg:justify-start md:items-end list-none gap-3 2xl:gap-10 md:mt-3 xl:mt-0">
           {socialMediaIcons.map(({ href, maskPaths, maskId }, index) => (
             <li key={index} className="h-full">
               <a
@@ -31,11 +31,11 @@ export default function Navbar({ views }) {
           ))}
         </ul>
 
-        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold text-[3.5rem] md:text-7xl  xl:text-8xl  w-full  xl:w-1/3 justify-center md:p-[0] font-evgeni">
+        <h1 className="text-matte-black whitespace-nowrap tracking-[-0.07em] flex font-bold text-[3.5rem] md:text-7xl  xl:text-7xl  w-full  xl:w-1/3 justify-center md:p-[0] font-evgeni">
           Evgeni Leonov
         </h1>
 
-        <ul className="bg-orange lg:bg-transparent w-full fixed bottom-0 left-0 lg:relative p-3 lg:p-0 lg:pt-5 flex xl:w-1/3 justify-evenly">
+        <ul className="bg-orange xl:bg-transparent w-full fixed bottom-0 left-0 xl:relative p-3 xl:p-0 xl:pt-5 flex xl:w-1/3 justify-evenly">
           {views.map((view) => (
             <li key={view.name}>
               <Link href={view.link} className="text-2xl xl:text-3xl font-medium text-matte-black font-evgeni">
