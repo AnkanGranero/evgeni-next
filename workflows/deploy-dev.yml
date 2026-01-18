@@ -1,0 +1,34 @@
+name: Deploy (dev) to VM
+
+on:
+  push:
+    branches: [dev]
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, ci-vm]
+
+    steps:
+      - name: Log in to GHCR
+        run: |
+          echo "${{ secrets.GHCR_READ_TOKEN }}" | docker login ghcr.io -u "${{ secrets.GHCR_USER }}" --password-stdin
+
+      - name: Pull image (dev)
+        run: |
+          docker pull ghcr.io/ankangranero/evgeni-next:dev
+
+      - name: Restart container
+        run: |
+          docker rm -f evgeni-next-dev || true
+          docker run -d \
+            --name evgeni-next-dev \
+            --restart unless-stopped \
+            -p 8080:3000 \
+            ghcr.io/ankangranero/evgeni-next:dev
+      - name: Smoke test
+        run: |
+          curl -I http://localhost:8080 || (docker logs --tail 200 evgeni-next-dev && exit 1)
