@@ -9,8 +9,8 @@ export function createImageObject(asset: Asset<never, 'sv-SE'>): ImageObject | u
   const dimensions = asset.fields.file?.details.image;
   const id = asset.sys.id;
   const title = asset.fields.title;
-  const thumb = { w: 400, h: 400, fit: 'thumb', q: 40, fm: 'webp' };
-  const full = { w: 1600, q: 90, fm: 'webp' };
+  const thumb = { w: 800, h: 800, fit: 'thumb', q: 80, fm: 'webp' };
+  const full = { w: 3200, q: 95, fm: 'webp' };
   const blur = { w: 20, q: 20, fm: 'webp' };
   const thumbUrl = `${url}?w=${thumb.w}&h=${thumb.h}&fit=${thumb.fit}&fm=${thumb.fm}&q=${thumb.q}`;
   const fullUrl = `${url}?w=${full.w}&fm=${full.fm}&q=${full.q}`;
