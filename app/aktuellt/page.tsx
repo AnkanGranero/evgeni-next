@@ -4,6 +4,11 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { getLatest} from "@/lib/contentful/latest/api";
 
+export const metadata = {
+  title: "Aktuellt",
+  description: "Nyheter och aktuellt från skådespelaren Evgeni Leonov.",
+};
+
 export default async function LatestPage() {
   const latest = await getLatest();
 
